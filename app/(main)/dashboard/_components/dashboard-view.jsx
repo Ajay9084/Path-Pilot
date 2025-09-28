@@ -166,18 +166,41 @@ const DashboardView = ({ insights }) => {
           <div className="h-[400px]">
           <ChartContainer className="h-[400px] rounded-xl bg-black p-4">
   <ResponsiveContainer width="100%" height="100%">
-    <BarChart data={salaryData} margin={{ top: 20, right: 20, left: 0, bottom: 20 }}>
+    <BarChart
+      data={salaryData}
+      margin={{ top: 20, right: 20, left: 0, bottom: 20 }}
+      barGap={8} // Gap between bars
+    >
       <CartesianGrid strokeDasharray="3 3" stroke="#1f2937" />
       <XAxis dataKey="name" stroke="#ccc" tick={{ fill: "#fff" }} />
       <YAxis stroke="#ccc" tick={{ fill: "#fff" }} />
-      <ChartTooltip content={<ChartTooltipContent />} />
+      <Tooltip content={<ChartTooltipContent />} />
 
-      {/* Smooth bars with rounded edges */}
-
-
-<Bar dataKey="min" radius={[10, 10, 10, 10]} fill="#93c5fd" />
-      <Bar dataKey="median" radius={[10, 10, 10, 10]} fill="#3b82f6" />
-      <Bar dataKey="max" radius={[10, 10, 10, 10]} fill="#1e40af" />
+      {/* Animated bars with smooth growth */}
+      <Bar
+        dataKey="min"
+        radius={[10, 10, 10, 10]}
+        fill="#93c5fd"
+        animationDuration={1500}
+        animationEasing="ease-in-out"
+        isAnimationActive={true}
+      />
+      <Bar
+        dataKey="median"
+        radius={[10, 10, 10, 10]}
+        fill="#3b82f6"
+        animationDuration={1500}
+        animationEasing="ease-in-out"
+        isAnimationActive={true}
+      />
+      <Bar
+        dataKey="max"
+        radius={[10, 10, 10, 10]}
+        fill="#1e40af"
+        animationDuration={1500}
+        animationEasing="ease-in-out"
+        isAnimationActive={true}
+      />
     </BarChart>
   </ResponsiveContainer>
 </ChartContainer>
