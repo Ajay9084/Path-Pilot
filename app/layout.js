@@ -5,7 +5,7 @@ import { Toaster } from "sonner";
 import Header from "@/components/header";
 import { ThemeProvider } from "@/components/theme-provider";
 import { dark } from "@clerk/themes";
-import { SmoothCursor } from "@/components/ui/smooth-cursor";
+
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -33,8 +33,8 @@ export default function RootLayout({ children }) {
             enableSystem
             disableTransitionOnChange
           >
-            {/* 👇 Global smooth cursor */}
-            <SmoothCursor />
+            
+           
 
             <Header />
             <main className="min-h-screen">{children}</main>
